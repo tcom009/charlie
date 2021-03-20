@@ -1,0 +1,2 @@
+module TemperatureChangesHelper
+end

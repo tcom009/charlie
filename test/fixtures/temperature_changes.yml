@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: temperature_changes
+#
+#  id                  :integer          not null, primary key
+#  date                :date
+#  temperature_celsius :string
+#  time                :time
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  room_id             :integer          not null
+#
+# Indexes
+#
+#  index_temperature_changes_on_room_id  (room_id)
+#
+# Foreign Keys
+#
+#  room_id  (room_id => rooms.id)
+#
+
+one:
+  room: one
+  date: 2021-03-19
+  time: 2021-03-19 23:14:06
+  temperature_celsius: MyString
+
+two:
+  room: two
+  date: 2021-03-19
+  time: 2021-03-19 23:14:06
+  temperature_celsius: MyString

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Charlie</title>
+    <title>Charlie - IoT data keeper</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,21 @@
   </head>
 
   <body>
+  <div class="navTitle">
+    <h1>Charlie - IoT data keeper </h1>
+  </div>
+    <div >
+      <nav  class="navTitle">
+         <ul>
+           <li><%= link_to "Homes", "/homes"%></li>
+           <li><%= link_to "Rooms", "/rooms"%></li>
+           <li><%= link_to "Devices", "/devices"%></li>
+           <li><%= link_to "DeviceTypes", "/device_types"%></li>
+           <li><%= link_to "Events", "/events "%></li>
+           <li><%= link_to "Temperature Queue", "/temperature_changes" %></li>
+         </ul>
+      </nav>
+    <div>
     <%= yield %>
   </body>
 </html>

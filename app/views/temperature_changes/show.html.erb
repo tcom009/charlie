@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @temperature_change.room_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @temperature_change.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @temperature_change.time %>
+</p>
+
+<p>
+  <strong>Temperature celsius:</strong>
+  <%= @temperature_change.temperature_celsius %>
+</p>
+
+<%= link_to 'Edit', edit_temperature_change_path(@temperature_change) %> |
+<%= link_to 'Back', temperature_changes_path %>

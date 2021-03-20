@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @event.device_id %>
+</p>
+
+<p>
+  <strong>Is on:</strong>
+  <%= @event.is_on %>
+</p>
+
+<p>
+  <strong>Is preprogrammed:</strong>
+  <%= @event.is_preprogrammed %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :temperature_changes
+  resources :events
   resources :devices
   resources :device_types
   resources :rooms
