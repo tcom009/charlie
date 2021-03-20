@@ -10,13 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_183552) do
+ActiveRecord::Schema.define(version: 2021_03_20_024447) do
+
+  create_table "device_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name"
+    t.integer "device_type_id", null: false
+    t.integer "home_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["device_type_id"], name: "index_devices_on_device_type_id"
+    t.index ["home_id"], name: "index_devices_on_home_id"
+    t.index ["room_id"], name: "index_devices_on_room_id"
+  end
 
   create_table "homes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "address"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "home_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["home_id"], name: "index_rooms_on_home_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,4 +57,8 @@ ActiveRecord::Schema.define(version: 2021_03_19_183552) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "devices", "device_types"
+  add_foreign_key "devices", "homes"
+  add_foreign_key "devices", "rooms"
+  add_foreign_key "rooms", "homes"
 end
