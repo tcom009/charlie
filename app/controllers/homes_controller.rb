@@ -1,4 +1,4 @@
-class HomesController < ApplicationController
+ class HomesController < ApplicationController
   before_action :set_home, only: %i[ show edit update destroy ]
 
   # GET /homes or /homes.json
@@ -64,6 +64,6 @@ class HomesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def home_params
-      params.require(:home).permit(:name)
+      params.require(:home).permit(:name, :address)
     end
 end
