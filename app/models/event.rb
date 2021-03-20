@@ -20,6 +20,6 @@
 #
 class Event < ApplicationRecord
   belongs_to :device
-  validates :event_date
+  validates :event_date , presence: true
 
 end

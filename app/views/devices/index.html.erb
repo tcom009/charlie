@@ -17,9 +17,9 @@
     <% @devices.each do |device| %>
       <tr>
         <td><%= device.name %></td>
-        <td><%= device.device_type_id %></td>
-        <td><%= device.home_id %></td>
-        <td><%= device.room_id %></td>
+        <td><%= device.device_type.name%></td>
+        <td><%= device.home.name %></td>
+        <td><%= device.room.name %></td>
         <td><%= link_to 'Show', device %></td>
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>

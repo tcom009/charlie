@@ -17,7 +17,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.event_date %></td>
-        <td><%= event.device_id %></td>
+        <td><%= event.device.name %></td>
         <td><%= event.is_on %></td>
         <td><%= event.is_preprogrammed %></td>
         <td><%= link_to 'Show', event %></td>
