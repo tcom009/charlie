@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 gem 'annotate'
 gem 'devise'
+gem 'oj'
+gem 'active_model_serializers', '~> 0.10.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

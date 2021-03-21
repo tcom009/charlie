@@ -1,9 +1,10 @@
  class HomesController < ApplicationController
   before_action :set_home, only: %i[ show edit update destroy ]
-
+  protect_from_forgery with: :null_session
   # GET /homes or /homes.json
   def index
     @homes = Home.all
+    render json: @homes
   end
 
   # GET /homes/1 or /homes/1.json
